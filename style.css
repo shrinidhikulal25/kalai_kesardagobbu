@@ -55,18 +55,27 @@ ul li {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* ✅ Updated gallery layout */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  justify-items: center;
 }
 
+/* ✅ Uniform image style */
 .gallery img {
   width: 100%;
-  max-width: 250px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* ✨ Optional hover zoom */
+.gallery img:hover {
+  transform: scale(1.05);
 }
 
 footer {
