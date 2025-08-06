@@ -86,6 +86,7 @@ nav a {
   font-size: 0.95rem;
   transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  white-space: nowrap;
 }
 
 nav a:hover {
@@ -227,14 +228,22 @@ footer {
 /* ===================
    Mobile Responsiveness
    =================== */
-@media (max-width: 480px) {
-  .gallery {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
   }
 
-  nav {
-    flex-direction: column;
-    gap: 8px;
+  nav a {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.82rem;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
   }
 
   .title-card h1 {
