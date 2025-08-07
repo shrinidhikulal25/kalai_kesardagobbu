@@ -1,3 +1,4 @@
+
 // Highlight nav link on scroll
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section');
