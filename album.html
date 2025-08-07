@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gallery | Our Institution</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
 </head>
 <body>
 
@@ -13,7 +14,7 @@
       <h1>ಮಹಮ್ಮಾಯಿ ಮಿತ್ರ ಮಂಡಳಿ (ರಿ.) ಕಲಾಯಿ</h1>
     </div>
     <div class="title-card yellow-card">
-      <h1>ಕೆಸರ್ದ ಗೊಬ್ಬು</h1>
+      <h1>📸 ನೆನಪಿನ ಭಂಡಾರ</h1>
     </div>
 
     <nav>
@@ -25,18 +26,46 @@
   <section id="album">
     <h2>📸 Last Year Memories</h2>
     <div class="gallery">
-      <img src="images/i1.jpg" alt="Event 1" loading="lazy"/>
-      <img src="images/i10.jpg" alt="Event 2" loading="lazy"/>
-      <img src="images/i3.jpg" alt="Event 3" loading="lazy"/>
-      <img src="images/i4.jpg" alt="Event 4" loading="lazy"/>
-      <img src="images/i5.jpg" alt="Event 5" loading="lazy"/>
-      <img src="images/i2.jpg" alt="Event 6" loading="lazy"/>
+      <a href="images/i1.jpg" data-lightbox="gallery"><img src="images/i1.jpg" alt="Event 1" loading="lazy"/></a>
+      <a href="images/i10.jpg" data-lightbox="gallery"><img src="images/i10.jpg" alt="Event 2" loading="lazy"/></a>
+      <a href="images/i3.jpg" data-lightbox="gallery"><img src="images/i3.jpg" alt="Event 3" loading="lazy"/></a>
+      <a href="images/i4.jpg" data-lightbox="gallery"><img src="images/i4.jpg" alt="Event 4" loading="lazy"/></a>
+      <a href="images/i5.jpg" data-lightbox="gallery"><img src="images/i5.jpg" alt="Event 5" loading="lazy"/></a>
+      <a href="images/i2.jpg" data-lightbox="gallery"><img src="images/i2.jpg" alt="Event 6" loading="lazy"/></a>
+      <a href="images/i6.jpg" data-lightbox="gallery"><img src="images/i6.jpg" alt="Event 7" loading="lazy"/></a>
+      <a href="images/i7.jpg" data-lightbox="gallery"><img src="images/i7.jpg" alt="Event 8" loading="lazy"/></a>
+      <a href="images/i8.jpg" data-lightbox="gallery"><img src="images/i8.jpg" alt="Event 9" loading="lazy"/></a>
+      <a href="images/i9.jpg" data-lightbox="gallery"><img src="images/i9.jpg" alt="Event 10" loading="lazy"/></a>
     </div>
   </section>
+
+  <div id="countdown" style="text-align:center; font-weight:bold; color:#d84315; margin-top:1rem;"></div>
 
   <footer>
     <p>© 2025. All Rights Reserved.</p>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script>
+    const countDownDate = new Date("Aug 24, 2025 09:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "🎉 Event Started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `⏳ Starts in: ${days}d ${hours}h ${mins}m ${secs}s`;
+    }, 1000);
+  </script>
 </body>
 </html>
