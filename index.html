@@ -50,7 +50,7 @@
     <div class="cards-container">
       <div class="card">
         <h3>🎤 Chief Guest</h3>
-        <p><strong>ssss </strong></p>
+        <p><strong> </strong></p>
       </div>
       <div class="card">
         <h3>📢 Announcement</h3>
@@ -64,6 +64,7 @@
     <p><strong>Date:</strong> 24th August 2025</p>
     <p><strong>Time:</strong> 9:00 AM onwards</p>
     <p><strong>Venue:</strong> Kalai ground</p>
+    <div id="countdown" style="text-align:center; font-weight:bold; color:#d84315; margin-top:1rem;"></div>
   </section>
 
   <section id="contact">
@@ -75,6 +76,29 @@
   <footer>
     <p>shrinidhikulal© 2025. All Rights Reserved.</p>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script>
+    const countDownDate = new Date("Aug 24, 2025 07:00:00").getTime();
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "🎉 Event Started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `⏳ Starts in: ${days}d ${hours}h ${mins}m ${secs}s`;
+    }, 1000);
+  </script>
 
   <script src="script.js"></script>
 </body>

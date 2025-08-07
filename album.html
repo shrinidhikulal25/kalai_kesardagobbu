@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gallery | Our Institution</title>
+  <title>Gallery | ಕೆಸರ್ದ ಗೊಬ್ಬು</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" />
 </head>
@@ -39,33 +39,11 @@
     </div>
   </section>
 
-  <div id="countdown" style="text-align:center; font-weight:bold; color:#d84315; margin-top:1rem;"></div>
 
   <footer>
-    <p>© 2025. All Rights Reserved.</p>
+    <p>shrinidhikulal© 2025. All Rights Reserved.</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-  <script>
-    const countDownDate = new Date("Aug 24, 2025 09:00:00").getTime();
-    const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      if (distance < 0) {
-        clearInterval(timer);
-        document.getElementById("countdown").innerHTML = "🎉 Event Started!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById("countdown").innerHTML =
-        `⏳ Starts in: ${days}d ${hours}h ${mins}m ${secs}s`;
-    }, 1000);
-  </script>
+  
 </body>
 </html>
