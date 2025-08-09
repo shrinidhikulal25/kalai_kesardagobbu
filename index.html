@@ -4,11 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Event | ಕೆಸರ್ದ ಗೊಬ್ಬು</title>
+  <!-- Google Fonts & FontAwesome for modern icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-
   <header>
     <div class="title-card orange-card">
       <h1>ಮಹಮ್ಮಾಯಿ ಮಿತ್ರ ಮಂಡಳಿ (ರಿ.) ಕಲಾಯಿ</h1>
@@ -16,22 +18,21 @@
     <div class="title-card yellow-card">
       <h1>ಕೆಸರ್ದ ಗೊಬ್ಬು</h1>
     </div>
-
     <nav>
-      <a href="events.html">Events</a>
-      <a href="album.html">Gallery</a>
-      <a href="#day">Event Day</a>
-      <a href="#contact">Contact</a>
+      <a href="events.html"><i class="fa-solid fa-calendar-days"></i> Events</a>
+      <a href="album.html"><i class="fa-solid fa-image"></i> Gallery</a>
+      <a href="#day"><i class="fa-solid fa-clock"></i> Event Day</a>
+      <a href="#contact"><i class="fa-solid fa-phone"></i> Contact</a>
     </nav>
   </header>
 
   <section id="events">
     <h2>📅 Upcoming Events</h2>
     <ul>
-      <li>🎉 Inauguration Ceremony – 10 AM</li>
-      <li>🎤 Guest Talk – 11 AM</li>
-      <li>🎭 Cultural Events – 11:30 AM</li>
-      <li>🏆 Prize Distribution – 6 PM</li>
+      <li><i class="fa-solid fa-champagne-glasses"></i> Inauguration Ceremony – 10 AM</li>
+      <li><i class="fa-solid fa-microphone"></i> Guest Talk – 11 AM</li>
+      <li><i class="fa-solid fa-masks-theater"></i> Cultural Events – 11:30 AM</li>
+      <li><i class="fa-solid fa-trophy"></i> Prize Distribution – 6 PM</li>
     </ul>
   </section>
 
@@ -49,11 +50,11 @@
     <h2>🌟 Highlights</h2>
     <div class="cards-container">
       <div class="card">
-        <h3>🎤 Chief Guest</h3>
-        <p><strong> </strong></p>
+        <h3><i class="fa-solid fa-user-tie"></i> Chief Guest</h3>
+        <p><strong>To be Announced</strong></p>
       </div>
       <div class="card">
-        <h3>📢 Announcement</h3>
+        <h3><i class="fa-solid fa-bullhorn"></i> Announcement</h3>
         <p><strong>Don’t miss:</strong> Tug-of-War at <strong>4 PM</strong></p>
       </div>
     </div>
@@ -63,43 +64,38 @@
     <h2>📆 Event Day</h2>
     <p><strong>Date:</strong> 24th August 2025</p>
     <p><strong>Time:</strong> 9:00 AM onwards</p>
-    <p><strong>Venue:</strong> Kalai ground</p>
-    <div id="countdown" style="text-align:center; font-weight:bold; color:#d84315; margin-top:1rem;"></div>
+    <p><strong>Venue:</strong> Kalai</p>
+    <div id="countdown"></div>
   </section>
 
   <section id="contact">
     <h2>📞 Contact Us</h2>
-    <p><strong>Phone:</strong> +91 94499 35787</p>
-    <p><strong>Location:</strong> Kalai, Karnataka</p>
+    <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +91 94499 35787</p>
+    <p><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> Kalai, Karnataka</p>
   </section>
 
   <footer>
     <p>shrinidhikulal© 2025. All Rights Reserved.</p>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
   <script>
+    // Countdown Timer (works as before)
     const countDownDate = new Date("Aug 24, 2025 07:00:00").getTime();
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const distance = countDownDate - now;
-
       if (distance < 0) {
         clearInterval(timer);
         document.getElementById("countdown").innerHTML = "🎉 Event Started!";
         return;
       }
-
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const secs = Math.floor((distance % (1000 * 60)) / 1000);
-
       document.getElementById("countdown").innerHTML =
         `⏳ Starts in: ${days}d ${hours}h ${mins}m ${secs}s`;
     }, 1000);
   </script>
-
-  <script src="script.js"></script>
 </body>
 </html>
